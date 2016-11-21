@@ -23,7 +23,7 @@
 
 Laravel Scout provides a simple, driver based solution for adding full-text search to your [Eloquent models](/docs/{{version}}/eloquent). Using model observers, Scout will automatically keep your search indexes in sync with your Eloquent records.
 
-Currently, Scout ships with an [Algolia](https://www.algolia.com/) driver; however, writing custom drivers is simple and you are free to extend Scout with your own search implementations.
+Currently, Scout ships with an [Algolia](https://www.algolia.com/) and elasticsearch driver; however, writing custom drivers is simple and you are free to extend Scout with your own search implementations.
 
 <a name="installation"></a>
 ## Installation
@@ -71,6 +71,12 @@ Once you have configured a queue driver, set the value of the `queue` option in 
 When using the Algolia driver, you should configure your Algolia `id` and `secret` credentials in your `config/scout.php` configuration file. Once your credentials have been configured, you will also need to install the Algolia PHP SDK via the Composer package manager:
 
     composer require algolia/algoliasearch-client-php
+
+#### Elasticsearch
+
+If you go with Elasticsearch, you need to install the Elasticsearch PHP SDK via the Composer package manager:
+
+    composer require "elasticsearch/elasticsearch:^2.2"
 
 <a name="configuration"></a>
 ## Configuration
